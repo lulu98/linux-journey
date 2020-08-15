@@ -1,0 +1,9 @@
+[Unit]
+Description=Systemd service that pulls all git repos.
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/bin/pull_git_repos.sh
+
+[Install]
+WantedBy=multi-user.target
