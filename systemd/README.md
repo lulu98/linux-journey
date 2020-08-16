@@ -9,4 +9,8 @@ This ensures that the changes take effect in the init system. Afterwards, the di
 ```
 sudo systemctl enable terminator.service
 ```
-Be aware that browsers, e.g. firefox service, should not be started as root user as this would give root privileges to the browser in case of corruption. 
+Be aware that browsers, e.g. firefox service, should not be started as root user as this would give root privileges to the browser in case of corruption.
+# Systemd services
+* Firefox service: starts a firefox window on boot  
+* Terminator service: starts a terminator window on boot  
+* Pull git repos service: pulls files from remote repos for all local git repos on boot, thus makes sure that the local repos are up-to-date 
