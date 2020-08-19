@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# Python Script is based on the following script: https://gist.github.com/ralphbean/5733076
 
 import pygithub3
 import subprocess
@@ -7,7 +6,9 @@ import os
 import sys
 import git
 
-gh = None
+gh = pygithub3.Github()
+user_name = 'lulu98'
+clone_dir = os.path.join(os.getenv("HOME"),"Documents/Projects/GitHub")
 
 def gather_repos(organization, no_forks=True):
     repos = gh.repos.list(user=organization).all()
@@ -17,16 +18,9 @@ def gather_repos(organization, no_forks=True):
         yield repo.clone_url
 
 if __name__ == '__main__':
-    if len(sys.argv)!=2:
-        print("Enter user name of a GitHub account!")
-        exit(1)
-    gh = pygithub3.Github()
-    user_name = sys.argv[1]
-    print("Cloning/Pulling Github repositories of user {}.".format(user_name))
-    clone_dir = os.path.join(os.getenv("HOME"),"Documents/Projects/GitHub")
-    clone_urls = gather_repos(user_name)
-    
-    # updating available local repositories
+    print("Cloning/Pulling GitHub repos of user {} to {}.".format(user_name,clone_dir))
+
+    # updating existing local repositories
     for root, dirs, files in os.walk(clone_dir):
         for d in dirs:
             pull_dir = os.path.join(clone_dir,d)
@@ -35,6 +29,7 @@ if __name__ == '__main__':
         break
     
     # cloning non-existing remote repositories
+    clone_urls = gather_repos(user_name)
     for url in clone_urls:
         bashCommand = "find {} -type f | xargs grep '{}' | wc -l".format(clone_dir,url)
         output = subprocess.check_output(['bash','-c', bashCommand])
