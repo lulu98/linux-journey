@@ -1,0 +1,4 @@
+The following software is installed on my systems:
+- Firefox (Add-on: uBlockOrigin, Tree Style Tabs) as browser
+- Terminator as terminal emulator
+- QTile as Tiling Window Manager 
