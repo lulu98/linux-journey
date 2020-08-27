@@ -58,3 +58,5 @@ nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 nnoremap <silent> <C-W>v :vsp<CR>
 nnoremap <silent> <C-W>h :sp<CR>
+nnoremap <silent> <C-down> :m+<CR>
+nnoremap <silent> <C-up> :m-2<CR>
