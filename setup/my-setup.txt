@@ -1,5 +1,5 @@
 The following software is installed on my systems:
-- Firefox (Add-on: uBlockOrigin, Tree Style Tabs, Vimium-ff) as browser
+- Firefox (Add-on: uBlockOrigin, Tree Style Tabs, Vimium-FF, LastPass, duckduckgo privacy essentials) as browser
 - Terminator as terminal emulator
 - QTile as Tiling Window Manager 
 - specific vim setup to use it as editor
