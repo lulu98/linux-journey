@@ -117,6 +117,11 @@ keys = [
     #########################
     Key(["mod1", "control"], "v", lazy.spawn('code')),
     Key(["mod1", "control"], "f", lazy.spawn('firefox')),
+
+    # Sound
+    Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse sset Master toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -D pulse sset Master 5%- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -D pulse sset Master 5%+ unmute"))
 ]
 
 group_names = [("WWW", {'layout': 'max'}),
