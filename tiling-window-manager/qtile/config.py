@@ -149,14 +149,15 @@ layouts = [
     # Try more layouts by unleashing below layouts.
     # layout.Bsp(),
     # layout.Columns(),
-    layout.Matrix(**layout_theme),
+    #layout.Matrix(**layout_theme),
     layout.MonadTall(**layout_theme),
     # layout.MonadWide(),
     # layout.RatioTile(),
-    layout.Tile(**layout_theme),
+    #layout.Tile(**layout_theme),
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
+    #layout.Floating(**layout_theme)
 ]
 
 widget_defaults = dict(

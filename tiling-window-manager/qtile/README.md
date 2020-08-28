@@ -7,9 +7,10 @@ QTile is a tiling window manager that can be configured in Python.
 - config file based on: https://gitlab.com/dwt1/dotfiles/-/tree/master/.config/qtile
 
 ## Prerequisites
-- install `terminator`
-- install `python-xlib`
-- install `xscreensaver` 
+- install `terminator`  
+- install `python-xlib`  
+- install `xscreensaver`   
+- install notification system `dunst`: https://www.addictivetips.com/ubuntu-linux-tips/set-up-better-system-notifications-on-linux-with-dunst/
 
 ## Setup
 - install qtile according to resources  
