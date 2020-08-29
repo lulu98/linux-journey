@@ -51,6 +51,7 @@ keys = [
     Key(["mod1", "control"], "v", lazy.spawn('code')),
     Key(["mod1", "control"], "f", lazy.spawn('firefox')),
     Key(["mod1", "control"], "r", lazy.spawn('riot-web')),
+    Key(["mod1", "control"], "g", lazy.spawn('google-chrome')),
 
     # Sound
     Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse sset Master toggle")),
@@ -73,8 +74,8 @@ for i, (name, kwargs) in enumerate(group_names, 1):
 
 layout_theme = {"border_width": 2,
                 "margin": 6,
-                "border_focus": "e1acff",
-                "border_normal": "1D2330"
+                "border_focus": '#e1acff',
+                "border_normal": '#1D2330',
                 }
 
 layouts = [

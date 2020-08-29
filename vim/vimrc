@@ -1,3 +1,4 @@
+"default settings
 syntax on 
 
 set noerrorbells
@@ -14,13 +15,11 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch 
 
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-
+"plugins
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'jremmen/vim-ripgrep'
+"Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'lyuts/vim-rtags'
@@ -30,13 +29,11 @@ Plug 'mbbill/undotree'
 
 call plug#end()
 
+"apply colorscheme
 colorscheme gruvbox
 set background=dark
 
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
-
+"variable settings
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let mapleader = " "
 
@@ -45,18 +42,39 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:ctrlp_use_caching = 0
 
+"Key bindings to move easily between different vim windows
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>u :UndotreeShow<CR>
+
+"Key bindings for file explorer: you can also just use :Explore
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-nnoremap <Leader>ps :Rg<SPACE>
+
+"Key bindings for vertical resize
+"horizontal resize is: ctrl+w + +/-
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
+
+"Key bindings for ycmcompleter
+"use ctrl+o to go back after goto command
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+"nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+nnoremap <silent> <Leader>gr :YcmCompleter GetDoc<CR>
+nnoremap <silent> <Leader>gt :YcmCompleter GetType<CR>
+
+"Key bindinds to make vertical and horizontal split in vim
 nnoremap <silent> <C-W>v :vsp<CR>
 nnoremap <silent> <C-W>h :sp<CR>
+
+"Key bindings to move single lines up and down
 nnoremap <silent> <C-down> :m+<CR>
 nnoremap <silent> <C-up> :m-2<CR>
+
+"Key bindings to copy independent of mode
+"requires: sudo apt-get install vim-gtk
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+
+"Key bindings to move the entire text after cursor one line below
+nnoremap <silent> <CR> i<CR><Esc><Esc>k$
