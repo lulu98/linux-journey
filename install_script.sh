@@ -3,6 +3,8 @@
 sudo apt-get update
 sudo apt-get upgrade
 
+# install curl and wget
+sudo apt-get install wget curl
 # install terminator
 sudo apt-get install terminator
 
@@ -15,9 +17,14 @@ git clone git@github.com:lulu98/linux-journey.git $repo_path
 
 # install zsh
 sudo apt-get install zsh
+chsh -s /usr/bin/zsh root
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 sudo apt-get install powerline fonts-powerline
 sudo apt-get install zsh-theme-powerlevel9k
 sudo apt-get install zsh-syntax-highlighting
+cat ${repo_path}/zshrc > ~/.zshrc
+source ~/.zshrc 
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install latex
 sudo apt-get install miktex
@@ -29,6 +36,7 @@ sudo apt-get install openjdk-8-jre
 
 # install python3
 sudo apt-get install python3
+sudo apt-get install python3-dev cmake
 
 # install riot
 sudo apt-get install -y lsb-release apt-transport-https
