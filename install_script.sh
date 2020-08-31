@@ -65,6 +65,14 @@ source ~/.zshrc
 ###########################
 ## install and setup vim ##
 ###########################
+# dependencies for YcmCompleter
+sudo apt-get install build-essential cmake vim python3-dev
+sudo apt-get install snapd
+sudo apt-get install mono-complete npm
+sudo snap install go --classic 
+sudo snap install node --classic
+
+# install and configure actual vim
 echo 'install and setup of vim'
 sudo apt-get install vim
 sudo apt-get install vim-gtk
