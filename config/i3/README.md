@@ -3,4 +3,3 @@
 
 # More information
 - use `feh` for background wallpaper: http://www.linuxandubuntu.com/home/set-background-wallpapers-on-i3wm
-

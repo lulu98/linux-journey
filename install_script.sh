@@ -22,6 +22,9 @@ sudo apt-get install git
 
 # install latex
 echo 'install latex'
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D6BC243565B2087BC3F897C9277A7293F59E4889
+echo "deb http://miktex.org/download/ubuntu focal universe" | sudo tee /etc/apt/sources.list.d/miktex.list
+sudo apt-get update
 sudo apt-get install miktex texlive-full texlive-fonts-extra
 
 # install java
@@ -44,7 +47,8 @@ sudo usermod -s /usr/bin/zsh $(whoami)
 sudo apt-get install powerline fonts-powerline
 sudo apt-get install zsh-theme-powerlevel9k
 sudo apt-get install zsh-syntax-highlighting
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+#sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 cat ${repo_path}/zshrc > ~/.zshrc
 source ~/.zshrc 
 #zsh
@@ -67,9 +71,11 @@ sudo apt-get install vim-gtk
 rm -rf ~/vim
 rm -rf ~/.vimrc
 cat ${repo_path}/vim/vimrc > ~/.vimrc
+mkdir ~/.vim/undodir -p
 ## install vim-plug as plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -c 'PluginInstall' -c 'qa!'
 vim -c 'PluginInstall' -c 'qa!'
 ~/.vim/plugged/YouCompleteMe/install.py --all
 

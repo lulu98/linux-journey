@@ -184,3 +184,6 @@ bindsym $mod+r mode "resize"
 #bar {
 #        status_command i3status
 #}
+
+# screenshot hotkeys
+bindsym Shift+Print exec gnome-screenshot -i
