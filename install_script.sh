@@ -90,6 +90,7 @@ vim -c 'PluginInstall' -c 'qa!'
 ## install i3 ##
 ################
 echo 'install and setup of i3'
+sudo apt-get install jq
 sudo apt-get install i3
 ## setup
 cp -r ${repo_path}/config/i3 ~/.config 
